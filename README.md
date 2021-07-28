@@ -92,7 +92,7 @@ it will translate into the following configuration (in the [advanced RabbitMQ co
 [
   %% ...
   %% backend configuration
-  {rabbitmq_auth_backend_oauth2, [
+  {rabbit_auth_backend_oauth2, [
     {resource_server_id, <<"my_rabbit_server">>},
     %% UAA signing key configuration
     {key_config, [
@@ -116,7 +116,7 @@ If a symmetric key is used, the configuration will look like this:
 
 ```erlang
 [
-  {rabbitmq_auth_backend_oauth2, [
+  {rabbit_auth_backend_oauth2, [
     {resource_server_id, <<"my_rabbit_server">>},
     {key_config, [
       {signing_keys, #{
@@ -186,7 +186,7 @@ By default the plugin will look for the `scope` key in the token, you can config
 
 ```erlang
 [
-  {rabbitmq_auth_backend_oauth2, [
+  {rabbit_auth_backend_oauth2, [
     {resource_server_id, <<"my_rabbit_server">>},
     {additional_rabbitmq_scopes, <<"my_custom_scope_key">>},
     ...
@@ -246,7 +246,7 @@ RABBITMQ_CONFIG_FILE=<path_to_plugin>/demo/symmetric_keys/rabbitmq rabbitmq-serv
 make run-broker RABBITMQ_CONFIG_FILE=demo/symmetric_keys/rabbitmq
 ```
 
-The `rabbitmq_auth_backend_oauth2` plugin must be enabled on the RabbitMQ node.
+The `rabbit_auth_backend_oauth2` plugin must be enabled on the RabbitMQ node.
 
 ### Asymmetric Key Example
 
